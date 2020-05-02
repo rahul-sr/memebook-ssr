@@ -1,27 +1,120 @@
-html,
 body {
-  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  line-height: 1.6;
-  font-size: 18px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-* {
-  box-sizing: border-box;
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
 
-a {
-  color: #0070f3;
-  text-decoration: none;
+.navbar.navbar-inverse {
+  margin-bottom: 0;
+  border-radius: 0;
+  z-index: 2;
+  position: fixed;
+  width: 100%;
 }
 
-a:hover {
-  text-decoration: underline;
+.navbar.navbar-inverse a {
+  font-weight: 500;
 }
 
-img {
-  max-width: 100%;
+.meme img {
+    width: 100%;
+}
+
+.card {margin-bottom: 30px;}
+
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {
+  height: 450px;
+  margin-top: 50px;
+}
+
+/* Set gray background color and 100% height */
+.sidenav {
+  padding-top: 20px;
+  background-color: #f1f1f1;
+  height: 100%;
+}
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+  .sidenav {
+    display: none;
+  }
+  .row.content {height:auto;} 
+  .logo {
+    margin-left: 20px;
+  }
+}
+
+.meme {
+  background: #bdc3c7;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.sidenav {
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.meme-container {
+  padding-top: 30px;
+}
+
+span.navbar-brand {
+  color: #e66060 !important;
+  font-weight: 600;
+}
+
+.logo {
+  width: 100px;
+}
+
+.share-button {
+  margin: 5px 25px 0 0 !important;
+}
+
+.share_container {
+  display: none;
+}
+
+.meme:hover .share_container {
   display: block;
+  position: absolute;
+  bottom: 10px;
+  left: 20%;
 }
+
+.meme:hover img {
+  opacity: 0.3;
+}
+
+.loader_svg__inner {
+  margin: 100px auto;
+}
+
+@media (min-width: 768px) {
+  .navbar-nav>li>a {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .navbar-nav {
+    margin-left: 20px;
+  }
+}
+

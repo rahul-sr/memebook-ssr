@@ -1,66 +1,45 @@
 import Head from 'next/head'
-import styles from './layout.module.css'
-import utilStyles from '../styles/utils.module.css'
-import Link from 'next/link'
-
-const name = '[Your Name]'
-export const siteTitle = 'Next.js Sample Website'
+import { useRouter } from "next/router";
 
 export default function Layout({ children, home }) {
+  const router = useRouter();
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
-        <link rel="icon" href="/favicon.ico" />
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"
-          content="Learn how to build a personal website using Next.js"
+          content="Memebook.site - Where the fun never ends"
         />
-        <meta
-          property="og:image"
-          content={`https://og-image.now.sh/${encodeURI(
-            siteTitle
-          )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.zeit.co%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
-        />
-        <meta name="og:title" content={siteTitle} />
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="keywords" content="Memes, Memebook, Funny, Viral"></meta>
+        <link rel="icon" href="/favicon.ico" />
+        <title>Memebook</title>
+        <script data-ad-client="ca-pub-6223473093447406" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
       </Head>
-      <header className={styles.header}>
-        {home ? (
-          <>
-            <img
-              src="/images/profile.jpg"
-              className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`}
-              alt={name}
-            />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
-          </>
-        ) : (
-          <>
-            <Link href="/">
-              <a>
-                <img
-                  src="/images/profile.jpg"
-                  className={`${styles.headerImage} ${utilStyles.borderCircle}`}
-                  alt={name}
-                />
-              </a>
-            </Link>
-            <h2 className={utilStyles.headingLg}>
-              <Link href="/">
-                <a className={utilStyles.colorInherit}>{name}</a>
-              </Link>
-            </h2>
-          </>
-        )}
-      </header>
-      <main>{children}</main>
-      {!home && (
-        <div className={styles.backToHome}>
-          <Link href="/">
-            <a>← Back to home</a>
-          </Link>
+      <nav className="navbar navbar-inverse">
+        <div className="container-fluid">
+          <div className="navbar-header">
+            <button type="button" className="navbar-toggle" aria-label="Navigation bar" data-toggle="collapse" data-target="#myNavbar">
+              <span className="icon-bar"></span>
+              <span className="icon-bar"></span>
+              <span className="icon-bar"></span>                        
+            </button>
+            <a href='/'>
+              <img className="logo" alt="memebook logo" src="/logo.png" />
+            </a>
+          </div>
+          <div className="collapse navbar-collapse" id="myNavbar">
+            <ul className="nav navbar-nav">
+              <li className={router.pathname == "/india" ? "active" : ""}><a href="/india">India</a></li>
+              <li className={router.pathname == "/coronavirus" ? "active" : ""}><a href="/coronavirus">Coronavirus</a></li>
+              <li className={router.pathname == "/animals" ? "active" : ""}><a href="/animals">Animals</a></li>
+              <li className={router.pathname == "/anime" ? "active" : ""}><a href="/anime">Anime</a></li>
+            </ul>
+          </div>
         </div>
-      )}
+      </nav>
+      <main>{children}</main>
     </div>
   )
 }
