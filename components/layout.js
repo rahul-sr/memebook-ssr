@@ -16,6 +16,8 @@ export default function Layout({ children, home }) {
         <link rel="icon" href="/favicon.ico" />
         <link rel="dns-prefetch" href="https://meme-api.herokuapp.com"/>
         <title>Memebook</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <script data-ad-client="ca-pub-6223473093447406" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
       </Head>
       <nav className="navbar navbar-inverse">
