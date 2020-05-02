@@ -1,4 +1,4 @@
-import Head from 'next/head'
+import Head from 'next/head';
 import { useRouter } from "next/router";
 
 export default function Layout({ children, home }) {
@@ -14,6 +14,7 @@ export default function Layout({ children, home }) {
         />
         <meta name="keywords" content="Memes, Memebook, Funny, Viral"></meta>
         <link rel="icon" href="/favicon.ico" />
+        <link rel="dns-prefetch" href="https://meme-api.herokuapp.com"/>
         <title>Memebook</title>
         <script data-ad-client="ca-pub-6223473093447406" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
       </Head>

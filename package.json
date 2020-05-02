@@ -20,6 +20,8 @@
     "sharp": "^0.25.2"
   },
   "devDependencies": {
-    "@svgr/webpack": "^5.4.0"
+    "@svgr/webpack": "^5.4.0",
+    "netlify-cli": "^2.48.0",
+    "serve": "^11.3.0"
   }
 }
