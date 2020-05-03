@@ -1,7 +1,6 @@
-// This is the "Offline copy of assets" service worker
+// This is the "serving cached media" service worker
 
 const CACHE = "pwabuilder-offline";
-const QUEUE_NAME = "bgSyncQueue";
 
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.0.0/workbox-sw.js');
 
@@ -11,16 +10,16 @@ self.addEventListener("message", (event) => {
   }
 });
 
-const bgSyncPlugin = new workbox.backgroundSync.Plugin(QUEUE_NAME, {
-  maxRetentionTime: 24 * 60 // Retry for max of 24 Hours (specified in minutes)
-});
+workbox.loadModule('workbox-cacheable-response');
+workbox.loadModule('workbox-range-requests');
 
 workbox.routing.registerRoute(
-  new RegExp('/*'),
-  new workbox.strategies.StaleWhileRevalidate({
+  /.*\.mp4/,
+  new workbox.strategies.CacheFirst({
     cacheName: CACHE,
     plugins: [
-      bgSyncPlugin
-    ]
-  })
+      new workbox.cacheableResponse.CacheableResponsePlugin({statuses: [200]}),
+      new workbox.rangeRequests.RangeRequestsPlugin(),
+    ],
+  }),
 );
