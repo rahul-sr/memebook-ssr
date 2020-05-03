@@ -1,0 +1,27 @@
+{
+	"dir" : "ltr",
+	"lang" : "English",
+	"name" : "Memebook",
+	"scope" : "/",
+	"display" : "standalone",
+	"start_url" : "https://memebook.site/",
+	"short_name" : "Memebook",
+	"theme_color" : "transparent",
+	"description" : "Memebook.site - Where the fun never ends",
+	"orientation" : "any",
+	"background_color" : "transparent",
+	"related_applications" : [],
+	"prefer_related_applications" : false,
+	"icons" : [
+		{
+			"src": "https://memebook.site/favicon.ico",
+			"sizes": "16x16 32x32 48x48"
+		},
+		{
+			"src": "https://memebook.site/favicon.ico",
+			"sizes": "16x16 32x32 48x48"
+		}],
+	"url" : "https://memebook.site",
+	"screenshots" : [],
+	"generated" : "true"
+}
