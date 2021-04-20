@@ -1,2 +1,3 @@
-This project is using Next.Js to create a Server Side renderer applications.
-The images or memes are pulled from the reddit channels.
+- This project is using Next.Js to create a Server Side renderer applications.
+- The images or memes are pulled from the reddit channels.
+- The demo website can be checked on https://memebook-ssr.vercel.app/ 
